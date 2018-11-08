@@ -2,9 +2,9 @@ package junit;
 
 import other.ForCheck;
 import other.Init;
-import Steps.OzonCartSteps;
-import Steps.OzonCatalogSteps;
-import Steps.OzonMainPageSteps;
+import steps.OzonCartSteps;
+import steps.OzonCatalogSteps;
+import steps.OzonMainPageSteps;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

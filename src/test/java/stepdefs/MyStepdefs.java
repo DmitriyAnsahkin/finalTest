@@ -2,10 +2,9 @@ package stepdefs;
 
 import other.ForCheck;
 import other.Init;
-import Steps.OzonCartSteps;
-import Steps.OzonCatalogSteps;
-import Steps.OzonMainPageSteps;
-import cucumber.api.PendingException;
+import steps.OzonCartSteps;
+import steps.OzonCatalogSteps;
+import steps.OzonMainPageSteps;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.ru.Дано;

@@ -1,4 +1,4 @@
-package Steps;
+package steps;
 
 import pages.OzonCatalog;
 import io.qameta.allure.Step;

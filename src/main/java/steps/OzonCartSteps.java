@@ -1,4 +1,4 @@
-package Steps;
+package steps;
 
 import other.ForCheck;
 import pages.OzonCart;
