@@ -1,12 +1,11 @@
-package Pages;
+package pages;
 
-import Other.Init;
+import other.Init;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,7 +23,7 @@ public abstract class BasePage {
     }
 
     public void click(WebElement element) {
-        new WebDriverWait(driver, 8).until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(driver, 8).until(ExpectedConditions.elementToBeClickable(element));
         scrollTo(element);
         element.click();
 //        WebElement webElement = Init.getDriver().findElement(By.xpath("//*[@id='desktopMenuMain']//a[contains(text(), 'Меню доставки')]"));
@@ -46,6 +45,10 @@ public abstract class BasePage {
 
     public WebElement getWebElement(String xpath) {
         return new WebDriverWait(driver, 8).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(xpath))));
+    }
+
+    public WebElement getWebElementVis(String xpath) {
+        return new WebDriverWait(driver, 8).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(xpath))));
     }
 
     public WebElement getWebElement(WebElement webElement) {

@@ -1,7 +1,7 @@
-package Junit;
+package junit;
 
-import Other.ForCheck;
-import Other.Init;
+import other.ForCheck;
+import other.Init;
 import Steps.OzonCartSteps;
 import Steps.OzonCatalogSteps;
 import Steps.OzonMainPageSteps;
@@ -9,33 +9,35 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class OzonPhotoTest {
+public class OzonPhoneTest {
     @Before
-    public void begin() {
+    public void begin(){
         //2.	Развернуть окно на весь экран
         Init.begin(true);
         ForCheck.clearVar();
     }
 
+
     @After
-    public void end() {
-        Init.end(false);
+    public void end(){
+        Init.end(true);
     }
 
     @Test
-    public void ozonPhotoTest() {
+    public void ozonPhoneTest(){
         OzonMainPageSteps ozonMainPageSteps = new OzonMainPageSteps();
         OzonCatalogSteps ozonCatalogSteps = new OzonCatalogSteps();
         OzonCartSteps ozonCartSteps = new OzonCartSteps();
+
         //3.	Выбрать пункт меню – Электроника
+
         ozonMainPageSteps.selectSubCategory("Электроника");
-        //4.	Выбрать категорию – Зеркальные фотоаппараты
-        ozonCatalogSteps.clickCategory("Фотокамеры").
-                setCategory("Зеркальные фотокамеры").
-                //6.	Заполнить цена от – 80000
-                setPriceFrom(80000, "TAB").
-                //5.	Выбрать производителя – Nikon, Canon
-                setBrand("Nikon", "Canon").
+        //4.	Выбрать категорию – Телефоны
+        ozonCatalogSteps.clickCategory("Смартфоны").
+                //6.	Заполнить цена от – 50000
+                setPriceFrom(50000, "TAB").
+                //5.	Выбрать производителя – Apple
+                setBrand("Apple").
                 //7.	Добавить первый товар в корзину, запомнить название и цену
                 buyFirstProdInStock();
         //8.	Перейти в корзину
@@ -46,7 +48,6 @@ public class OzonPhotoTest {
                 .deleteAll()
                 //11.	Проверить, что корзина пуста.
                 .isCartEmpty();
-
 
     }
 }

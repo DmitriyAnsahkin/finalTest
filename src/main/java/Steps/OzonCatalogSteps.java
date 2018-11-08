@@ -1,6 +1,6 @@
 package Steps;
 
-import Pages.OzonCatalog;
+import pages.OzonCatalog;
 import io.qameta.allure.Step;
 
 public class OzonCatalogSteps {
@@ -12,31 +12,32 @@ public class OzonCatalogSteps {
     }
     @Step("6. Заполнить цена от – {0}")
     public OzonCatalogSteps setPriceFrom(int from, String keys) {
-        ozonCatalog.setPriceFrom(from);
-        ozonCatalog.clickButtonShow();
+        ozonCatalog.waitPreload()
+        .setPriceFrom(from)
+        .clickButtonShow();
                 //clickOn();
 
         return this;
     }
     @Step("7. Добавить первый товар в корзину, запомнить название и цену")
     public OzonCatalogSteps buyFirstProdInStock() {
-        ozonCatalog.waitLoadFilters();
-
-        ozonCatalog.waitResult();
-        ozonCatalog.buyFirstProdInStock();
+        ozonCatalog.waitPreload()
+        .buyProdInStock();
         return this;
     }
 
     public OzonCatalogSteps setCategory(String category) {
-        ozonCatalog.setCategory(category);
-
+        ozonCatalog.waitPreload()
+        .setCategory(category);
         return this;
     }
     @Step("5. Выбрать производителя – {0}")
     public OzonCatalogSteps setBrand(String... brand) {
+
         if (brand.length > 0) {
             for (String s : brand) {
-                ozonCatalog.setBrandX(s);
+                ozonCatalog.waitPreload()
+                .setBrandX(s);
             }
 
         }

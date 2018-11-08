@@ -1,8 +1,7 @@
 package Steps;
 
-import Other.ForCheck;
-import Pages.OzonCart;
-import cucumber.api.java.uk.Нехай;
+import other.ForCheck;
+import pages.OzonCart;
 import io.qameta.allure.Step;
 import org.junit.Assert;
 
@@ -29,12 +28,11 @@ public class OzonCartSteps {
     @Step("10. Нажать на удалить все")
     public OzonCartSteps deleteAll (){
         ozonCart.clickDeleteAll();
-
         return this;
     }
     @Step("11. Проверить, что корзина пуста.")
     public OzonCartSteps isCartEmpty (){
-
+        clickCart();
         ozonCart.isCartEmpty();
         return this;
     }

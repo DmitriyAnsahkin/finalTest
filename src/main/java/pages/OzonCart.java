@@ -1,18 +1,16 @@
-package Pages;
+package pages;
 
-import Other.ForCheck;
 import org.junit.Assert;
+import other.ForCheck;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class OzonCart extends BasePage {
-    @FindBy(xpath = "//span[@class='eMyOzon_Item_Bottom' and contains(text(), 'Корзина')]")
+    @FindBy(xpath = "//*[@class='eMyOzon_Item_Bottom' and contains(text(), 'Корзина')]")
     WebElement cart;
 
     @FindBy(xpath = "//div[@class='eCartTotal_summPrice ']")
@@ -56,15 +54,8 @@ public class OzonCart extends BasePage {
 
     public OzonCart isCartEmpty(){
         WebElement temp = getWebElement(status);
-//        if (temp.getText().replaceAll("", "") == "Корзина"){
-//            int count = 0;
-//            do {
-//                if (temp.getText().replaceAll("", "") != "Корзина") break;
-//                count ++;
-//                if (count == 1000) Assert.fail("Таймаут. Козина не пуста");
-//            } while (true);
-//        }
-//        if (!((temp.getText().replaceAll(" ", "")).equals("Корзинапуста"))) Assert.fail("Корзина не пустая!");
+        Assert.assertEquals("Error", "Корзина пуста", temp.getText());
+
         return this;
     }
     @Override

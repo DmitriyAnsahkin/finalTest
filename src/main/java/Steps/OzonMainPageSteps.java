@@ -1,6 +1,6 @@
 package Steps;
 
-import Pages.OzonMainPage;
+import pages.OzonMainPage;
 import io.qameta.allure.Step;
 
 public class OzonMainPageSteps {

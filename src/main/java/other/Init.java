@@ -1,4 +1,4 @@
-package Other;
+package other;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
             driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
             //1.	Перейти на https://www.ozon.ru/
-            driver.get("https://ozon.ru/");
+            driver.get((String) SingletonForProperties.getInstance().getProperties().get("base.url"));
         }
 
         public static void end (boolean close){

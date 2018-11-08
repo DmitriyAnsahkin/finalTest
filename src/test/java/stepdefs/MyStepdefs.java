@@ -1,7 +1,7 @@
-package Stepdefs;
+package stepdefs;
 
-import Other.ForCheck;
-import Other.Init;
+import other.ForCheck;
+import other.Init;
 import Steps.OzonCartSteps;
 import Steps.OzonCatalogSteps;
 import Steps.OzonMainPageSteps;
@@ -32,13 +32,12 @@ public class MyStepdefs {
 
     @After
     public void end() {
-        Init.end(false);
+        Init.end(true);
     }
 
     @Дано("^открыт сайт ozon и развернут на весь экран$")
     public void openSite() {
     }
-
 
     @Когда("^происходит нажатие на кнопку Меню - \"(.*)\"$")
     public void clickMenuCategory(String category) {
@@ -46,7 +45,7 @@ public class MyStepdefs {
     }
 
     @Тогда("^выбираем подкатегорию \"(.*)\"$")
-    public void выбираемПодкатегорию(String category)  {
+    public void setSubCategory(String category)  {
         ozonCatalogSteps.clickCategory(category);
     }
 
@@ -54,12 +53,11 @@ public class MyStepdefs {
     public void setBrand(String brand) {
         ozonCatalogSteps.setBrand(brand);
     }
+
     @И("^Выбираем производителя \"(.*)\" и \"(.*)\"$")
     public void setBrand(String brand, String brand2) {
         ozonCatalogSteps.setBrand(brand, brand2);
     }
-
-
 
     @И("^устанавливаем фильтры цена от - \"(.*)\" рублей$")
     public void priceFrom(int from) {
@@ -97,10 +95,5 @@ public class MyStepdefs {
         ozonCatalogSteps.setCategory(category);
     }
 
-    @Когда("^нажаты \"(.*)\" и \"(.*)\"$")
-    public void нажатыИ(String arg0, String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
 }
 
