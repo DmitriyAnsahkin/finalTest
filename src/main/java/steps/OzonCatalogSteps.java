@@ -25,7 +25,7 @@ public class OzonCatalogSteps {
         .buyProdInStock();
         return this;
     }
-
+    @Step("4.1 Выбрать подгатегорию - {0}")
     public OzonCatalogSteps setCategory(String category) {
         ozonCatalog.waitPreload()
         .setCategory(category);
